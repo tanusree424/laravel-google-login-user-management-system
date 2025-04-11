@@ -24,7 +24,12 @@ Route::controller(SocialteController::class)->group(function(){
     
 
 });
-
+Route::get('/superadmin/dashboard', function () {
+    return view('SuperAdmin.SuperAdmin');
+})->name('superadmin.dashboard');
+Route::get('/admin/dashboard', function () {
+    return view('Admin.AdminDashboard');
+})->name('admin.dashboard');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
